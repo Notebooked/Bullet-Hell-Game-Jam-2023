@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bsldp1mxiii6h"]
+[gd_scene load_steps=2 format=3 uid="uid://bsldp1mxiii6h"]
+
+[ext_resource type="PackedScene" uid="uid://cmbgb37dj6baj" path="res://Scenes/Spawner.tscn" id="1_ujjvd"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Spawner" parent="." instance=ExtResource("1_ujjvd")]
