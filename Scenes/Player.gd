@@ -13,7 +13,7 @@ func _physics_process(delta):
 		direction.y += 1
 	if Input.is_action_pressed("up"):
 		direction.y -= 1
-		
+	
 	direction = direction.normalized()
 	
 	velocity = speed * direction
