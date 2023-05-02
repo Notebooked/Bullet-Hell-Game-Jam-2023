@@ -1,20 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://beyh1wylpvfha"]
+[gd_scene load_steps=5 format=3 uid="uid://beyh1wylpvfha"]
 
 [ext_resource type="PackedScene" uid="uid://1vghqq28n1sd" path="res://Scenes/Player.tscn" id="1_7ir5e"]
+[ext_resource type="Script" path="res://Scenes/Camera.gd" id="1_yqn7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dxlp7"]
+flip_faces = true
 
 [node name="Node3D" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
-projection = 1
-size = 26.2598
 
 [node name="Player" parent="." instance=ExtResource("1_7ir5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.347139, 0)
 
 [node name="Room" type="StaticBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Room"]
-depth = -1.0
-polygon = PackedVector2Array(-0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_wjgcc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room"]
+mesh = SubResource("BoxMesh_dxlp7")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+projection = 1
+current = true
+size = 29.9393
+script = ExtResource("1_yqn7s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 10, 10, 10)
+light_energy = 5.586
+light_indirect_energy = 5.28
+sky_mode = 1
