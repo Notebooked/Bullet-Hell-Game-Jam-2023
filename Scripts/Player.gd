@@ -16,12 +16,12 @@ func _physics_process(delta):
 		velocity.y -= GRAVITY * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and camera.rotation_mode != 3:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
+	if camera.rotation_mode == 1: input_dir.y = 0
 	var direction = (Vector3(input_dir.x, 0, input_dir.y)).rotated(Vector3.UP,camera.rotation.y).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED

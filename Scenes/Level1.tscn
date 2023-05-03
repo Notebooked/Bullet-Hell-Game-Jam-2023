@@ -1,5 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://drunnwfbt2ot5"]
+[gd_scene load_steps=4 format=3 uid="uid://drunnwfbt2ot5"]
 
-[ext_resource type="PackedScene" uid="uid://beyh1wylpvfha" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
+[ext_resource type="PackedScene" uid="uid://cutbt6450n1p1" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
+[ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_j5wrq"]
+[ext_resource type="PackedScene" uid="uid://dfpnn3yrdp4ws" path="res://Scenes/Platform.tscn" id="3_04kkp"]
 
 [node name="Level1" instance=ExtResource("1_0aqqp")]
+
+[node name="Phase1" type="Node3D" parent="Phases" index="0"]
+script = ExtResource("2_j5wrq")
+timed = true
+camera_preset = 2
+
+[node name="Platform" parent="Phases/Phase1" index="0" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, -5.13823, 5.6881)
+
+[node name="Platform2" parent="Phases/Phase1" index="1" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -5.57298, -2.95006, 0.624452)
+
+[node name="Phase2" type="Node3D" parent="Phases" index="1"]
+script = ExtResource("2_j5wrq")
+timed = true
+camera_preset = 2
+
+[node name="Platform" parent="Phases/Phase2" index="0" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, 1.08024, -5.68358)
+
+[node name="Platform2" parent="Phases/Phase2" index="1" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -5.57298, -2.95006, 0.624452)
