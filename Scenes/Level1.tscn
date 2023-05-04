@@ -23,7 +23,18 @@ timed = true
 camera_preset = 2
 
 [node name="Platform" parent="Phases/Phase2" index="0" instance=ExtResource("3_04kkp")]
-transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, 1.08024, -5.68358)
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, 0.0590221, -5.68358)
 
 [node name="Platform2" parent="Phases/Phase2" index="1" instance=ExtResource("3_04kkp")]
 transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -5.57298, -2.95006, 0.624452)
+
+[node name="Phase3" type="Node3D" parent="Phases" index="2"]
+script = ExtResource("2_j5wrq")
+timed = true
+camera_preset = 1
+
+[node name="Platform" parent="Phases/Phase3" index="0" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, -5.55898, -5.138, 0)
+
+[node name="Platform2" parent="Phases/Phase3" index="1" instance=ExtResource("3_04kkp")]
+transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, 2.30491, -2.18386, 0)

@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfpnn3yrdp4ws"]
+[gd_scene load_steps=6 format=3 uid="uid://dfpnn3yrdp4ws"]
 
 [ext_resource type="Script" path="res://Scenes/PhasePart.gd" id="1_qmg25"]
+[ext_resource type="Texture2D" uid="uid://bbnduo0w44e6v" path="res://Asphalt026C_1K_Color.jpg" id="2_3p4y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qn4vs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_amugq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha6tr"]
+albedo_texture = ExtResource("2_3p4y2")
 
 [node name="Platform" type="StaticBody3D"]
 script = ExtResource("1_qmg25")
@@ -14,3 +18,4 @@ shape = SubResource("BoxShape3D_qn4vs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_amugq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ha6tr")
