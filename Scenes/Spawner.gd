@@ -2,8 +2,9 @@ extends StaticBody3D
 
 const Bullet = preload("res://Scenes/Bullet.tscn")
 
-@export var rotate = 0
-@export var cooldown = 1
+@export var direction = Vector3(1, 0, 0)
+@export var cooldown:float = 1
+@export var speed = 10
 
 var time = 0.0
 
@@ -17,5 +18,6 @@ func _process(delta):
 
 func shoot():
 	var b = Bullet.instantiate()
-	b.start($Muzzle.global_position, rotation)
 	get_parent().add_child(b)
+	b.global_position = $Muzzle.global_position
+	b.velocity = direction.normalized() * speed

@@ -1,25 +1,14 @@
-extends CharacterBody3D
+extends Area3D
 
-var speed = 750
-
-var despawn_bounds
-
-func start(pos, dir):
-	rotation = dir
-	position = pos
-	velocity = Vector3(speed, 0, 0)
-	despawn_bounds = abs(position.x) + 1000
+var velocity = Vector3(3, 0, 0)
 
 func _physics_process(delta):
-	if abs(position.x) > despawn_bounds or abs(position.y) > despawn_bounds:
-		queue_free() #KILL YOURSELF
-	
-	var collision = move_and_collide(velocity * delta)
-	if collision:
-		velocity = velocity.bounce(collision.get_normal())
+	position += velocity * delta
+	for body in get_overlapping_bodies():
+		print(body.name)
 		
-		if collision.get_collider().name == "Player":
+		if body.name == "Player":
+			body.bullet_hit()
+		
+		if not "Bullet" in body.name:
 			queue_free()
-		
-		if collision.get_collider().has_method("hit"):
-			collision.get_collider().hit()

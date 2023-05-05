@@ -41,4 +41,5 @@ transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, -5.55898, -5.138, 0)
 transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, 2.30491, -2.18386, 0)
 
 [node name="Spawner" parent="." index="5" instance=ExtResource("2_5cev2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16359, 0, 2.57154)
+cooldown = 0.1
