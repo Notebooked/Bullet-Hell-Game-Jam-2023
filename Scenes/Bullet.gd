@@ -23,6 +23,3 @@ func _physics_process(delta):
 		
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit()
-
-func _on_visible_on_screen_notifier_3d_screen_exited():
-	queue_free()
