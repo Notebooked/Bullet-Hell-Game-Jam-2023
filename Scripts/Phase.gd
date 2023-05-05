@@ -15,7 +15,8 @@ var activated = false
 func phase_activate():
 	activated = true
 	
-	for child in self.get_children():
+	for child in get_children():
+		print(child.name)
 		child.phase_enabled()
 	
 	var camera: Camera3D = get_node("../../Camera")
@@ -29,13 +30,13 @@ func phase_activate():
 func phase_deactivate():
 	activated = false
 	
-	for child in self.get_children():
+	for child in get_children():
 		child.phase_disabled()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
-	self.phase_deactivate()
+	phase_deactivate()
 
 func _process(delta):
 	if activated:

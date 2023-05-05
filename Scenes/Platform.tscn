@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfpnn3yrdp4ws"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://Scenes/PhasePart.gd" id="1_qmg25"]
+[ext_resource type="Script" path="res://Scripts/PhasePart.gd" id="1_qmg25"]
 [ext_resource type="Texture2D" uid="uid://bbnduo0w44e6v" path="res://Asphalt026C_1K_Color.jpg" id="2_3p4y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qn4vs"]

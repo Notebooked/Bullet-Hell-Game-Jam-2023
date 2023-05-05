@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cutbt6450n1p1"]
+[gd_scene load_steps=9 format=3 uid="uid://5fdaf4jhjn0v"]
 
 [ext_resource type="PackedScene" uid="uid://danuk7irbmoq6" path="res://Scenes/Player.tscn" id="1_7ir5e"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_7u7qs"]
 [ext_resource type="Script" path="res://Scripts/Phases.gd" id="3_bb4ch"]
+[ext_resource type="Script" path="res://Scripts/Gui.gd" id="4_5o8m3"]
+[ext_resource type="Script" path="res://Scripts/Hearts.gd" id="5_fmph5"]
+[ext_resource type="PackedScene" uid="uid://uavmc5wtc555" path="res://Scenes/Heart.tscn" id="6_j58cb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
 
@@ -58,3 +61,25 @@ sky_mode = 1
 
 [node name="Phases" type="Node3D" parent="."]
 script = ExtResource("3_bb4ch")
+
+[node name="Gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_5o8m3")
+
+[node name="Hearts" type="Control" parent="Gui"]
+layout_mode = 1
+anchor_left = 0.017
+anchor_top = 0.031
+anchor_right = 0.174
+anchor_bottom = 0.123
+offset_left = 0.415998
+offset_top = -0.0880013
+offset_right = -0.448013
+offset_bottom = 0.295998
+script = ExtResource("5_fmph5")
+heart_scene = ExtResource("6_j58cb")

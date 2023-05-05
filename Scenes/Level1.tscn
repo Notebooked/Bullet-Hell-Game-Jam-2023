@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://drunnwfbt2ot5"]
 
-[ext_resource type="PackedScene" uid="uid://cutbt6450n1p1" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
-[ext_resource type="PackedScene" uid="uid://cbmvae7slafa5" path="res://Scenes/Spawner.tscn" id="2_5cev2"]
+[ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
+[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="2_5cev2"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_j5wrq"]
-[ext_resource type="PackedScene" uid="uid://dfpnn3yrdp4ws" path="res://Scenes/Platform.tscn" id="3_04kkp"]
+[ext_resource type="PackedScene" path="res://Scenes/Platform.tscn" id="3_04kkp"]
 
 [node name="Level1" instance=ExtResource("1_0aqqp")]
 
@@ -29,6 +29,9 @@ transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, 0.059022
 [node name="Platform2" parent="Phases/Phase2" index="1" instance=ExtResource("3_04kkp")]
 transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -5.57298, -2.95006, 0.624452)
 
+[node name="Spawner" parent="Phases/Phase2" index="2" instance=ExtResource("2_5cev2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16359, 0, 2.57154)
+
 [node name="Phase3" type="Node3D" parent="Phases" index="2"]
 script = ExtResource("2_j5wrq")
 timed = true
@@ -39,7 +42,3 @@ transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, -5.55898, -5.138, 0)
 
 [node name="Platform2" parent="Phases/Phase3" index="1" instance=ExtResource("3_04kkp")]
 transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, 2.30491, -2.18386, 0)
-
-[node name="Spawner" parent="." index="5" instance=ExtResource("2_5cev2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16359, 0, 2.57154)
-cooldown = 0.1
