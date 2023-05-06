@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://stlef0avc1am"]
+
+[ext_resource type="Script" path="res://Scripts/PhaseGoal.gd" id="1_ffjnc"]
+[ext_resource type="ArrayMesh" uid="uid://c37wd2gobu4xm" path="res://icosphere.obj" id="2_ylx61"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0e56q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhy3y"]
+transparency = 1
+depth_draw_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[node name="PhaseGoal" type="Area3D"]
+script = ExtResource("1_ffjnc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+shape = SubResource("SphereShape3D_0e56q")
+
+[node name="Icosphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_hhy3y")
+mesh = ExtResource("2_ylx61")
+skeleton = NodePath("")

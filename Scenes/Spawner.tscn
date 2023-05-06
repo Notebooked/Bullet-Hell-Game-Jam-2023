@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0fckc2gfx4hn"]
+[gd_scene load_steps=5 format=3 uid="uid://c0fckc2gfx4hn"]
 
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="1_ai6r8"]
+[ext_resource type="ArrayMesh" uid="uid://ce2re3cwkss60" path="res://bulletlauncher.obj" id="2_3a4lc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nwcw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e657"]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_color = Color(0.698039, 1, 1, 1)
 
 [node name="Spawner" type="StaticBody3D"]
 script = ExtResource("1_ai6r8")
 
 [node name="Muzzle" type="Marker3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3nwcw")
+
+[node name="Bulletlauncher" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5e657")
+mesh = ExtResource("2_3a4lc")

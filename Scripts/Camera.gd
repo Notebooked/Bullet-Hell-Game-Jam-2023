@@ -11,7 +11,7 @@ var rotation_mode = 1
 func _ready():
 	target_position = position
 
-func set_preset(preset):
+func set_preset(preset, instant = false):
 	if preset == 1:
 		target_position = Vector3(0,0,25)
 		target_rotation = Vector3(0,0,0)
@@ -25,6 +25,9 @@ func set_preset(preset):
 		target_position = Vector3(0,25,0)
 		target_rotation = Vector3(-90,0,0)
 		rotation_mode = 3
+	if instant:
+		position = target_position
+		rotation_degrees = target_rotation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

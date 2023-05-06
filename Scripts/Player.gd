@@ -7,6 +7,8 @@ const GRAVITY = 45
 
 var camera: Camera3D
 
+var level_finished = false
+
 func _ready():
 	camera = get_parent().get_node("Camera")
 
@@ -29,8 +31,13 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+	
+	if !level_finished:
+		move_and_slide()
 
 func bullet_hit():
-	get_node("../Gui/Hearts").took_damage()
+	if !level_finished:
+		get_node("../Gui/Hearts").took_damage()
+
+func goal_touched():
+	level_finished = true

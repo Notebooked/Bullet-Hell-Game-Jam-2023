@@ -1,21 +1,21 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://dppjg0rlrd2lp"]
 
-[ext_resource type="Script" path="res://Scripts/PhasePart.gd" id="1_qmg25"]
 [ext_resource type="Texture2D" uid="uid://bbnduo0w44e6v" path="res://Asphalt026C_1K_Color.jpg" id="2_3p4y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qn4vs"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_amugq"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha6tr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulqoc"]
+transparency = 1
+depth_draw_mode = 1
 albedo_texture = ExtResource("2_3p4y2")
 
+[sub_resource type="BoxMesh" id="BoxMesh_amugq"]
+
 [node name="Platform" type="StaticBody3D"]
-script = ExtResource("1_qmg25")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_qn4vs")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ulqoc")
 mesh = SubResource("BoxMesh_amugq")
-surface_material_override/0 = SubResource("StandardMaterial3D_ha6tr")
