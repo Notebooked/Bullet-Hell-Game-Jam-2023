@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drunnwfbt2ot5"]
+[gd_scene load_steps=6 format=3 uid="uid://drunnwfbt2ot5"]
 
 [ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_o5jgu"]
@@ -26,35 +26,7 @@ transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, -5.13823
 transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -3.10245, -2.95006, 0.624452)
 
 [node name="Goal" parent="Phases/Phase1" index="3" instance=ExtResource("5_l0let")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08064, -0.845597, 0.638393)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08064, -1.67054, 0.638393)
 
-[node name="Platform" parent="Phases/Phase2" index="0" instance=ExtResource("3_04kkp")]
-transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, 0.0590221, -5.68358)
-
-[node name="Platform2" parent="Phases/Phase2" index="1" instance=ExtResource("3_04kkp")]
-transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -5.57298, -2.95006, 0.624452)
-
-[node name="Spawner" parent="Phases/Phase2" index="2" instance=ExtResource("2_5cev2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16359, 0, 2.57154)
-
-[node name="Phase3" type="Node3D" parent="Phases" index="2"]
-script = ExtResource("2_j5wrq")
-timed = true
-camera_preset = 1
-
-[node name="Platform" parent="Phases/Phase3" index="0" instance=ExtResource("3_04kkp")]
-transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, -5.55898, -5.138, 0)
-
-[node name="Platform2" parent="Phases/Phase3" index="1" instance=ExtResource("3_04kkp")]
-transform = Transform3D(3.887, 0, 0, 0, 0.66, 0, 0, 0, 15, 2.30491, -2.18386, 0)
-
-[node name="PauseMenu" parent="." index="6" instance=ExtResource("5_vtix2")]
-process_mode = 3
-
-[node name="DeathMenu" parent="." index="7" instance=ExtResource("5_eit52")]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
 [node name="Goal" parent="Phases/EndPhase" index="0"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.3474, -4.52439, -3.42625)

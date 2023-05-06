@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5fdaf4jhjn0v"]
+[gd_scene load_steps=12 format=3 uid="uid://5fdaf4jhjn0v"]
 
 [ext_resource type="PackedScene" uid="uid://danuk7irbmoq6" path="res://Scenes/Player.tscn" id="1_7ir5e"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_7u7qs"]
@@ -6,10 +6,13 @@
 [ext_resource type="Script" path="res://Scripts/Gui.gd" id="4_5o8m3"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="4_ccpee"]
 [ext_resource type="Script" path="res://Scripts/Hearts.gd" id="5_fmph5"]
-[ext_resource type="PackedScene" uid="uid://c3oyr7eqplni1" path="res://Scenes/Goal.tscn" id="5_mn0d1"]
-[ext_resource type="PackedScene" uid="uid://uavmc5wtc555" path="res://Scenes/Heart.tscn" id="6_j58cb"]
+[ext_resource type="PackedScene" uid="uid://cdbcpeu0a8dr6" path="res://Scenes/Goal.tscn" id="5_mn0d1"]
+[ext_resource type="PackedScene" uid="uid://dcp6oxpefdh1t" path="res://Scenes/Heart.tscn" id="6_j58cb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysk07"]
+albedo_color = Color(0.733333, 0.862745, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dxlp7"]
 flip_faces = true
@@ -47,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_wjgcc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room"]
+material_override = SubResource("StandardMaterial3D_ysk07")
 mesh = SubResource("BoxMesh_dxlp7")
 
 [node name="Camera" type="Camera3D" parent="."]

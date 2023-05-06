@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3oyr7eqplni1"]
+[gd_scene load_steps=6 format=3 uid="uid://cdbcpeu0a8dr6"]
 
+[ext_resource type="Script" path="res://Scripts/Goal.gd" id="1_3hecy"]
 [ext_resource type="ArrayMesh" uid="uid://c37wd2gobu4xm" path="res://icosphere.obj" id="1_lqgi6"]
-[ext_resource type="Script" path="res://Scripts/GoalPhasePart.gd" id="1_nh2nq"]
 [ext_resource type="Script" path="res://Scripts/GoalMesh.gd" id="3_gpjwc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0e56q"]
@@ -11,7 +11,7 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="Goal" type="Area3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-script = ExtResource("1_nh2nq")
+script = ExtResource("1_3hecy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_0e56q")

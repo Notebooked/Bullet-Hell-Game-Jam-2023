@@ -2,6 +2,10 @@ extends Node3D
 
 var current_phase = 0
 
+func _process(delta):
+	for child in get_children():
+		child.phase_process(delta, child == get_current_phase_node() or child.name == "EndPhase")
+
 func get_current_phase_node():
 	var path = "Phase" + str(current_phase)
 	if has_node(path):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dppjg0rlrd2lp"]
 
-[ext_resource type="Texture2D" uid="uid://bbnduo0w44e6v" path="res://Asphalt026C_1K_Color.jpg" id="2_3p4y2"]
+[ext_resource type="Texture2D" uid="uid://bbnduo0w44e6v" path="res://Images/Asphalt026C_1K_Color.jpg" id="2_3p4y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qn4vs"]
 

@@ -2,8 +2,6 @@ extends Node3D
 
 var time_while_activated = 0.0
 
-var activated = false
-
 @export var timed = false #if not timed then there is a phase goal
 @export var time_until_deactivation = 5.0
 
@@ -16,8 +14,6 @@ var phase_in_alpha_lerp = 0.125
 
 # Called when the node enters the scene tree for the first time.
 func phase_activate():
-	activated = true
-	
 	for phasepart in get_children():
 		if phasepart.has_method("phase_activated"):
 			phasepart.phase_activated()
@@ -31,8 +27,6 @@ func phase_activate():
 
 # Called when the node enters the scene tree for the first time.
 func phase_deactivate():
-	activated = false
-	
 	for phasepart in get_children():
 		if phasepart.has_method("phase_deactivated"):
 			phasepart.phase_deactivated()
@@ -40,11 +34,13 @@ func phase_deactivate():
 func phase_in_phaseparts():
 	for phasepart in get_children():
 		for child in phasepart.get_children():
+			print(child.name)
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = false
 			if is_instance_of(child, MeshInstance3D):
 				var material_overlay: BaseMaterial3D = child.material_override
 				material_overlay.albedo_color.a = lerpf(material_overlay.albedo_color.a, 1.0, phase_in_alpha_lerp)
+	print("0000")
 
 func phase_out_phaseparts():
 	for phasepart in get_children():
@@ -56,17 +52,17 @@ func phase_out_phaseparts():
 				material_overlay.albedo_color.a = lerpf(material_overlay.albedo_color.a, 0.0, phase_in_alpha_lerp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _ready():
+func _enter_tree():
 	for phasepart in get_children():
 		for child in phasepart.get_children():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
-				print(phasepart.name, ", ", child.name, ", ", child.material_override)
+				print(child.name)
 				var material_override: BaseMaterial3D = child.material_override
 				material_override.albedo_color.a = 0.0
 
-func _process(delta):
+func phase_process(delta, activated):
 	if activated:
 		time_while_activated += delta
 		
