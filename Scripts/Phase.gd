@@ -73,7 +73,6 @@ func _process(delta):
 		phase_in_phaseparts()
 		
 		if timed and time_while_activated >= time_until_deactivation:
-			print(true)
 			var phases = get_parent()
 			phases.next_phase()
 	else:

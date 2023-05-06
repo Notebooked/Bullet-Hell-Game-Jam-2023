@@ -5,8 +5,6 @@ var velocity = Vector3(3, 0, 0)
 func _physics_process(delta):
 	position += velocity * delta
 	for body in get_overlapping_bodies():
-		print(body.name)
-		
 		if body.name == "Player":
 			body.bullet_hit()
 		
