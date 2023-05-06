@@ -8,5 +8,5 @@ func _physics_process(delta):
 		if body.name == "Player":
 			body.bullet_hit()
 		
-		if not "Bullet" in body.name:
+		if not "Bullet" in body.name and not "Spawner" in body.name:
 			queue_free()

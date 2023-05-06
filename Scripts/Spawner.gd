@@ -2,7 +2,6 @@ extends StaticBody3D
 
 const Bullet = preload("res://Scenes/Bullet.tscn")
 
-@export var direction = Vector3(1, 0, 0)
 @export var cooldown:float = 1
 @export var speed = 10
 
@@ -23,11 +22,11 @@ func shoot():
 		var b = Bullet.instantiate()
 		add_child(b)
 		b.position = $Muzzle.position
-		b.velocity = direction.normalized() * speed
+		b.velocity = basis.x * speed
 
 # Called when the node enters the scene tree for the first time.
-func phase_disabled():
+func phase_deactivated():
 	able_to_shoot = false
 
-func phase_enabled():
+func phase_activated():
 	able_to_shoot = true

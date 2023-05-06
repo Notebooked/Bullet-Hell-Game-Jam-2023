@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce2re3cwkss60"
+path="res://.godot/imported/bulletlauncher.obj-06f080f4c6f719e8c898a99c31a37910.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bulletlauncher.obj-06f080f4c6f719e8c898a99c31a37910.mesh"]
+
+source_file="res://bulletlauncher.obj"
+dest_files=["res://.godot/imported/bulletlauncher.obj-06f080f4c6f719e8c898a99c31a37910.mesh", "res://.godot/imported/bulletlauncher.obj-06f080f4c6f719e8c898a99c31a37910.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
