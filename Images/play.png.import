@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbnduo0w44e6v"
-path.s3tc="res://.godot/imported/Asphalt026C_1K_Color.jpg-95618aa5cc0300c7c520befe234158f2.s3tc.ctex"
+uid="uid://c5c7fryrpqtwc"
+path="res://.godot/imported/play.png-6d891a4a20a0323ddcd89159d8e49176.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asphalt026C_1K_Color.jpg"
-dest_files=["res://.godot/imported/Asphalt026C_1K_Color.jpg-95618aa5cc0300c7c520befe234158f2.s3tc.ctex"]
+source_file="res://Images/play.png"
+dest_files=["res://.godot/imported/play.png-6d891a4a20a0323ddcd89159d8e49176.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

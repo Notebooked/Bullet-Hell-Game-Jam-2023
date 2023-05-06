@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://uavmc5wtc555"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://cncn0b0y4wqmn" path="res://hearttest.png" id="1_1icus"]
+[ext_resource type="Texture2D" uid="uid://cncn0b0y4wqmn" path="res://Images/hearttest.png" id="1_1icus"]
 
 [node name="Heart" type="TextureRect"]
 offset_right = 40.0

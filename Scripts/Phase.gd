@@ -43,6 +43,5 @@ func _process(delta):
 		time_while_activated += delta
 		
 		if timed and time_while_activated >= time_until_deactivation:
-			print(true)
 			var phases = get_parent()
 			phases.next_phase()
