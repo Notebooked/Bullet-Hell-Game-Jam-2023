@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxsx0gwu3bm0f"]
+[gd_scene load_steps=3 format=3 uid="uid://p86kh6x3b55w"]
 
-[ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_tnrjk"]
-[ext_resource type="Texture2D" uid="uid://c5c7fryrpqtwc" path="res://Images/play.png" id="2_v4ov7"]
-[ext_resource type="Texture2D" uid="uid://fcqo4i7shx83" path="res://Images/exit.png" id="3_0pnuk"]
+[ext_resource type="Script" path="res://Scenes/Death.gd" id="1_wyshr"]
+[ext_resource type="Texture2D" uid="uid://c5c7fryrpqtwc" path="res://Images/play.png" id="2_n2itf"]
 
-[node name="PauseMenu" type="Control"]
+[node name="DeathMenu" type="Control"]
 process_mode = 2
 visible = false
 layout_mode = 3
@@ -13,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tnrjk")
+script = ExtResource("1_wyshr")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -37,17 +36,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "PAUSED"
+text = "YOU DIED!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_v4ov7")
-
-[node name="QuitButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_0pnuk")
+texture_normal = ExtResource("2_n2itf")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
