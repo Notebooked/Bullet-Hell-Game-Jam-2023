@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://5fdaf4jhjn0v"]
+[gd_scene load_steps=14 format=3 uid="uid://5fdaf4jhjn0v"]
 
 [ext_resource type="PackedScene" uid="uid://danuk7irbmoq6" path="res://Scenes/Player.tscn" id="1_7ir5e"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_7u7qs"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/Hearts.gd" id="5_fmph5"]
 [ext_resource type="PackedScene" uid="uid://cdbcpeu0a8dr6" path="res://Scenes/Goal.tscn" id="5_mn0d1"]
 [ext_resource type="PackedScene" uid="uid://dcp6oxpefdh1t" path="res://Scenes/Heart.tscn" id="6_j58cb"]
+[ext_resource type="PackedScene" uid="uid://bxsx0gwu3bm0f" path="res://Scenes/Pause.tscn" id="9_jvy6o"]
+[ext_resource type="PackedScene" uid="uid://p86kh6x3b55w" path="res://Scenes/Death.tscn" id="10_i8qyu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
 
@@ -99,3 +101,9 @@ offset_right = -0.448013
 offset_bottom = 0.295998
 script = ExtResource("5_fmph5")
 heart_scene = ExtResource("6_j58cb")
+
+[node name="PauseMenu" parent="Gui" instance=ExtResource("9_jvy6o")]
+layout_mode = 1
+
+[node name="DeathMenu" parent="Gui" instance=ExtResource("10_i8qyu")]
+layout_mode = 1

@@ -23,9 +23,10 @@ func _process(delta):
 
 func took_damage():
 	if time_since_last_hit >= hit_cooldown:
-		if len(get_children()) > 0:
+		if len(get_children()) > 1:
 			remove_child(get_children()[-1])
 		else:
+			remove_child(get_children()[-1])
 			get_tree().paused = true
-			$"root/DeathMenu".visible = true
+			$"../DeathMenu".visible = true
 		time_since_last_hit = 0
