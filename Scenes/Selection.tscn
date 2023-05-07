@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1ux78q5owt5e"]
+[gd_scene load_steps=3 format=3 uid="uid://d1k14t8slux7k"]
 
-[ext_resource type="Script" path="res://Scenes/Selection.gd" id="1_qp221"]
+[ext_resource type="Script" path="res://Scripts/Selection.gd" id="1_qp221"]
 [ext_resource type="Texture2D" uid="uid://c4n4perb51qxs" path="res://Images/perspective.png" id="1_ycm8a"]
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qp221")
@@ -20,17 +25,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ycm8a")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -46.5
-offset_right = 44.0
-offset_bottom = 46.5
-grow_horizontal = 2
-grow_vertical = 2

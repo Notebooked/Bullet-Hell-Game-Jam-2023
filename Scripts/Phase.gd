@@ -38,8 +38,7 @@ func phase_in_phaseparts():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = false
 			if is_instance_of(child, MeshInstance3D):
-				var material_overlay: BaseMaterial3D = child.material_override
-				material_overlay.albedo_color.a = lerpf(material_overlay.albedo_color.a, 1.0, phase_in_alpha_lerp)
+				child.transparency = lerpf(child.transparency, 0.0, phase_in_alpha_lerp)
 	print("0000")
 
 func phase_out_phaseparts():
@@ -48,8 +47,7 @@ func phase_out_phaseparts():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
-				var material_overlay: BaseMaterial3D = child.material_override
-				material_overlay.albedo_color.a = lerpf(material_overlay.albedo_color.a, 0.0, phase_in_alpha_lerp)
+				child.transparency = lerpf(child.transparency, 1.0, phase_in_alpha_lerp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _enter_tree():
@@ -59,8 +57,7 @@ func _enter_tree():
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
 				print(child.name)
-				var material_override: BaseMaterial3D = child.material_override
-				material_override.albedo_color.a = 0.0
+				child.transparency = 1.0
 
 func phase_process(delta, activated):
 	if activated:
