@@ -1,6 +1,7 @@
 extends Area3D
 
 var velocity = Vector3(3, 0, 0)
+var time = 0
 
 func _physics_process(delta):
 	position += velocity * delta
@@ -9,4 +10,12 @@ func _physics_process(delta):
 			body.bullet_hit()
 		
 		if not "Bullet" in body.name and not "Spawner" in body.name:
-			queue_free()
+			$CollisionShape3D.disabled = true
+			$MeshInstance3D.visible = false
+			
+			$GPUParticles3D.emitting = true
+			
+			time = delta
+			
+			if delta == time + 0.25:
+				queue_free()

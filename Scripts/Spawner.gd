@@ -4,6 +4,7 @@ const Bullet = preload("res://Scenes/Bullet.tscn")
 
 @export var cooldown:float = 1
 @export var speed = 10
+@export var target = false
 
 var able_to_shoot = false
 
@@ -11,6 +12,9 @@ var time = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if target:
+		look_at($"root/Player".global_position)
+	
 	time += delta
 	if time > cooldown:
 		time = 0.0

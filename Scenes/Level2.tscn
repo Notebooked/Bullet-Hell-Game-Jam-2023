@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_npbg7"]
 [ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="3_sdnxa"]
 [ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="4_gn0vc"]
-[ext_resource type="PackedScene" uid="uid://stlef0avc1am" path="res://Scenes/PhaseGoal.tscn" id="5_xipnd"]
+[ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_xipnd"]
 
 [node name="Level2" instance=ExtResource("1_e5sii")]
 
