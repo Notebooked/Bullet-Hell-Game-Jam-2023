@@ -19,20 +19,9 @@ albedo_color = Color(0.733333, 0.862745, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_dxlp7"]
 flip_faces = true
 
-<<<<<<< Updated upstream
 [sub_resource type="Environment" id="Environment_62jxo"]
 glow_enabled = true
 glow_blend_mode = 0
-=======
-[sub_resource type="Environment" id="Environment_hjyqs"]
-background_mode = 1
-background_color = Color(0.141176, 0.152941, 0.192157, 1)
-background_energy_multiplier = 1.64
-glow_enabled = true
-glow_intensity = 0.72
-glow_strength = 0.55
-glow_blend_mode = 1
->>>>>>> Stashed changes
 glow_hdr_threshold = 2.0
 
 [node name="Node3D" type="Node3D"]
@@ -87,10 +76,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10,
 shadow_enabled = true
 sky_mode = 1
 
-[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10.7337, 0)
-sky_mode = 1
-
 [node name="Phases" type="Node3D" parent="."]
 script = ExtResource("3_bb4ch")
 
@@ -129,8 +114,4 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-<<<<<<< Updated upstream
 environment = SubResource("Environment_62jxo")
-=======
-environment = SubResource("Environment_hjyqs")
->>>>>>> Stashed changes

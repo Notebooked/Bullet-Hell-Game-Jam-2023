@@ -35,6 +35,3 @@ func play_falling():
 		$AnimationPlayer.play("Falling")
 		
 		playing_anim = 2
-
-func _process(delta):
-	get_parent().velocity
