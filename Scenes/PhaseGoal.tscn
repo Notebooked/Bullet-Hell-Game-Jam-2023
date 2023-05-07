@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://stlef0avc1am"]
+[gd_scene load_steps=5 format=3 uid="uid://o6q46v3f4nmv"]
 
 [ext_resource type="Script" path="res://Scripts/PhaseGoal.gd" id="1_ffjnc"]
 [ext_resource type="ArrayMesh" uid="uid://c37wd2gobu4xm" path="res://icosphere.obj" id="2_ylx61"]
@@ -9,7 +9,7 @@
 transparency = 1
 depth_draw_mode = 1
 shading_mode = 0
-albedo_color = Color(1, 1, 0, 1)
+albedo_color = Color(2, 2, 0, 1)
 
 [node name="PhaseGoal" type="Area3D"]
 script = ExtResource("1_ffjnc")
