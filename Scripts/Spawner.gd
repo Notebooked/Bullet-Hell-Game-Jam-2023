@@ -6,6 +6,8 @@ const Bullet = preload("res://Scenes/Bullet.tscn")
 @export var speed = 10
 @export var target = false
 
+var shoot_offset = 0.2
+
 var able_to_shoot = false
 
 var time = 0.0
@@ -25,8 +27,9 @@ func shoot():
 	if able_to_shoot:
 		var b = Bullet.instantiate()
 		add_child(b)
-		b.position = $Muzzle.position
-		b.velocity = basis.x * speed
+		var forward = Vector3(1,0,0)
+		b.position = forward * shoot_offset
+		b.velocity = forward * speed
 
 # Called when the node enters the scene tree for the first time.
 func phase_deactivated():

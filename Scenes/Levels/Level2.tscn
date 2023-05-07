@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://nrxpl358b7s"]
+
+<<<<<<< Updated upstream:Scenes/Level2.tscn
+[ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_e5sii"]
+[ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_npbg7"]
+[ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="3_sdnxa"]
+[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="4_gn0vc"]
+[ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_xipnd"]
+=======
+[ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_bpluw"]
+[ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_jqr6l"]
+[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="3_6d60i"]
+[ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="4_euunb"]
+[ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_qknjq"]
+>>>>>>> Stashed changes:Scenes/Levels/Level2.tscn
+
+[node name="Level2" instance=ExtResource("1_bpluw")]
+
+[node name="Player" parent="." index="0"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -4.15578, -6.75, 0)
+
+[node name="DirectionalLight3D" parent="." index="3"]
+shadow_bias = 9.782
+
+[node name="Phase1" type="Node3D" parent="Phases" index="0"]
+script = ExtResource("2_jqr6l")
+camera_preset = 1
+set_camera_preset_instantly = true
+
+[node name="Spawner" parent="Phases/Phase1" index="0" instance=ExtResource("3_6d60i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97429, -4.13466, 0)
+
+[node name="Platform" parent="Phases/Phase1" index="1" instance=ExtResource("4_euunb")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 1.40802, -5.138, 0)
+
+[node name="Platform2" parent="Phases/Phase1" index="2" instance=ExtResource("4_euunb")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -4.37464, -2.61394, 0)
+
+[node name="PhaseGoal" parent="Phases/Phase1" index="3" instance=ExtResource("5_qknjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45911, -1.10222, 0)
+
+[node name="Phase2" type="Node3D" parent="Phases" index="1"]
+script = ExtResource("2_jqr6l")
+camera_preset = 3
+
+[node name="Spawner2" parent="Phases/Phase2" index="0" instance=ExtResource("3_6d60i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97429, -6.52814, 3.18636)
+
+[node name="Spawner3" parent="Phases/Phase2" index="1" instance=ExtResource("3_6d60i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97429, -6.52814, 5.55974)
+
+[node name="PhaseGoal" parent="Phases/Phase2" index="2" instance=ExtResource("5_qknjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66255, -6.85413, 5.62895)
+
+[node name="Goal" parent="Phases/EndPhase" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.3474, -4.52439, -3.42625)

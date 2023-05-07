@@ -4,7 +4,7 @@ var current_phase = 0
 
 func _process(delta):
 	for child in get_children():
-		child.phase_process(delta, child == get_current_phase_node() or child.name == "EndPhase")
+		child.phase_process(delta, child == get_current_phase_node() or (child.name == "EndPhase" and !get_current_phase_node()))
 
 func get_current_phase_node():
 	var path = "Phase" + str(current_phase)

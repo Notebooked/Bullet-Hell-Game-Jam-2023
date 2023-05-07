@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-var colors = [
+@export var colors = [
 	Color.RED,
 	Color.ORANGE,
 	Color.YELLOW,

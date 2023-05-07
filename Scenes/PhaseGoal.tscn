@@ -9,7 +9,7 @@
 transparency = 1
 depth_draw_mode = 1
 shading_mode = 0
-albedo_color = Color(2, 2, 0, 1)
+albedo_color = Color(2.00392, 2.00392, 0, 1)
 
 [node name="PhaseGoal" type="Area3D"]
 script = ExtResource("1_ffjnc")

@@ -31,12 +31,12 @@ func set_preset(preset, instant = false):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_key_pressed(KEY_1):
-		set_preset(1)
-	if Input.is_key_pressed(KEY_2):
-		set_preset(2)
-	if Input.is_key_pressed(KEY_3):
-		set_preset(3)
+#	if Input.is_key_pressed(KEY_1):
+#		set_preset(1)
+#	if Input.is_key_pressed(KEY_2):
+#		set_preset(2)
+#	if Input.is_key_pressed(KEY_3):
+#		set_preset(3)
 	
 	position = lerp(position, target_position, lerp_value)
 	rotation_degrees = lerp(rotation_degrees, target_rotation, lerp_value)

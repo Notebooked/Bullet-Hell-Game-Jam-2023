@@ -7,7 +7,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_0e56q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcrdr"]
-albedo_color = Color(2, 0, 0, 1)
+albedo_color = Color(2.00392, 0, 0, 1)
 
 [node name="Goal" type="Area3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -23,6 +23,7 @@ cast_shadow = 0
 mesh = ExtResource("1_lqgi6")
 skeleton = NodePath("")
 script = ExtResource("3_gpjwc")
+colors = [Color(2.00392, 0, 0, 1), Color(2, 0.67451, 0, 1), Color(2.00392, 2.00392, 0, 1), Color(0, 2.00392, 0, 1), Color(0, 0, 2.00392, 1), Color(0.643137, 0.164706, 1.15294, 1), Color(1.35686, 0.435294, 1.41569, 1)]
 
 [node name="IcosphereParticles" type="Node3D" parent="."]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

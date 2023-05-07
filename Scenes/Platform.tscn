@@ -6,7 +6,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulqoc"]
 transparency = 1
-depth_draw_mode = 1
 albedo_texture = ExtResource("2_3p4y2")
 
 [sub_resource type="BoxMesh" id="BoxMesh_amugq"]

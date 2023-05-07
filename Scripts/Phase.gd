@@ -34,12 +34,10 @@ func phase_deactivate():
 func phase_in_phaseparts():
 	for phasepart in get_children():
 		for child in phasepart.get_children():
-			print(child.name)
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = false
 			if is_instance_of(child, MeshInstance3D):
 				child.transparency = lerpf(child.transparency, 0.0, phase_in_alpha_lerp)
-	print("0000")
 
 func phase_out_phaseparts():
 	for phasepart in get_children():
@@ -56,7 +54,6 @@ func _enter_tree():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
-				print(child.name)
 				child.transparency = 1.0
 
 func phase_process(delta, activated):

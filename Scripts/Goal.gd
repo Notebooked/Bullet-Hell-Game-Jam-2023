@@ -59,7 +59,7 @@ func _process(delta):
 		
 		if player.position.y > next_level_height:
 			print(get_tree().current_scene.name)
-			get_tree().change_scene_to_file("res://Scenes/Level" + str(int(str(get_tree().current_scene.name))+1) + ".tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/Level" + str(int(str(get_tree().current_scene.name))+1) + ".tscn")
 
 		return
 
