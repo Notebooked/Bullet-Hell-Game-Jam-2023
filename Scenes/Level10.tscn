@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44rh6mr2vyk6"]
+
+[ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_amd81"]
+[ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_gnqbn"]
+
+[node name="Level10" instance=ExtResource("1_amd81")]
+
+[node name="DirectionalLight3D" parent="." index="3"]
+shadow_bias = 9.782
+
+[node name="Phase1" type="Node3D" parent="Phases" index="0"]
+script = ExtResource("2_gnqbn")
+camera_preset = 2
+set_camera_preset_instantly = true
+
+[node name="Goal" parent="Phases/EndPhase" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.3474, -4.52439, -3.42625)
