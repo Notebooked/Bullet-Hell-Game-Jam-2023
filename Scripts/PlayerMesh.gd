@@ -35,3 +35,13 @@ func play_falling():
 		$AnimationPlayer.play("Falling")
 		
 		playing_anim = 2
+
+func play_jump():
+	if playing_anim != 3:
+		$AnimationPlayer.stop()
+		
+		var anim = $AnimationPlayer.get_animation("Jump")
+		anim.loop_mode = Animation.LOOP_NONE
+		$AnimationPlayer.play("Jump")
+			
+		playing_anim = 3

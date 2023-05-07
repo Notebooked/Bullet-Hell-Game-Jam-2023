@@ -27,7 +27,10 @@ func handle_animations(direction):
 		else:
 			$PlayerMesh.play_run()
 	else:
-		$PlayerMesh.play_falling()
+		if velocity.y < 0:
+			$PlayerMesh.play_falling()
+		else:
+			$PlayerMesh.play_jump()
 
 func _physics_process(delta):
 	# Add the gravity.
