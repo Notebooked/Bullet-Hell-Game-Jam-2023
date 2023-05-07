@@ -7,7 +7,7 @@ func _ready():
 	play_idle()
 
 func play_idle():
-	if playing_anim != 0:
+	if playing_anim != 0 and not (playing_anim == 4 and $AnimationPlayer.is_playing()):
 		$AnimationPlayer.stop()
 		
 		var idle = $AnimationPlayer.get_animation("Idle")
@@ -17,7 +17,7 @@ func play_idle():
 		playing_anim = 0
 
 func play_run():
-	if playing_anim != 1:
+	if playing_anim != 1 and not (playing_anim == 4 and $AnimationPlayer.is_playing()):
 		$AnimationPlayer.stop()
 		
 		var anim = $AnimationPlayer.get_animation("Run")
@@ -45,3 +45,13 @@ func play_jump():
 		$AnimationPlayer.play("Jump")
 			
 		playing_anim = 3
+
+func play_land():
+	if playing_anim != 4:
+		$AnimationPlayer.stop()
+		
+		var anim = $AnimationPlayer.get_animation("Land")
+		anim.loop_mode = Animation.LOOP_NONE
+		$AnimationPlayer.play("Land")
+			
+		playing_anim = 4

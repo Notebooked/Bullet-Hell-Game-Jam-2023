@@ -9,6 +9,8 @@ var camera: Camera3D
 
 var level_finished = false
 
+var was_on_floor_last = false
+
 func _ready():
 	camera = get_parent().get_node("Camera")
 
@@ -22,15 +24,20 @@ func lerp_rotation(direction):
 
 func handle_animations(direction):
 	if is_on_floor():
-		if direction.length() == 0:
-			$PlayerMesh.play_idle()
+		if was_on_floor_last == false:
+			$PlayerMesh.play_land()
 		else:
-			$PlayerMesh.play_run()
+			if direction.length() == 0:
+				$PlayerMesh.play_idle()
+			else:
+				$PlayerMesh.play_run()
+		was_on_floor_last = true
 	else:
 		if velocity.y < 0:
 			$PlayerMesh.play_falling()
 		else:
 			$PlayerMesh.play_jump()
+		was_on_floor_last = false
 
 func _physics_process(delta):
 	# Add the gravity.
