@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Hearts.gd" id="5_fmph5"]
 [ext_resource type="PackedScene" uid="uid://cdbcpeu0a8dr6" path="res://Scenes/Goal.tscn" id="5_mn0d1"]
 [ext_resource type="PackedScene" uid="uid://dcp6oxpefdh1t" path="res://Scenes/Heart.tscn" id="6_j58cb"]
-[ext_resource type="PackedScene" uid="uid://bxsx0gwu3bm0f" path="res://Scenes/Pause.tscn" id="9_jvy6o"]
+[ext_resource type="PackedScene" uid="uid://cajsefmjj8ld4" path="res://Scenes/Pause.tscn" id="9_jvy6o"]
 [ext_resource type="PackedScene" uid="uid://wwn4iyj7lqw8" path="res://Scenes/Death.tscn" id="10_i8qyu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
@@ -117,3 +117,5 @@ layout_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_62jxo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
