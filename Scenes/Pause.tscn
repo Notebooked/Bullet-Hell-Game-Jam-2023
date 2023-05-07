@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxsx0gwu3bm0f"]
+[gd_scene load_steps=4 format=3 uid="uid://cajsefmjj8ld4"]
 
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="1_tnrjk"]
-[ext_resource type="Texture2D" uid="uid://detukn0layjxg" path="res://pause_FILL0_wght400_GRAD0_opsz48.png" id="2_hrlrh"]
-[ext_resource type="Texture2D" uid="uid://c5c7fryrpqtwc" path="res://Images/play.png" id="2_v4ov7"]
-[ext_resource type="Texture2D" uid="uid://fcqo4i7shx83" path="res://Images/exit.png" id="3_0pnuk"]
-[ext_resource type="Texture2D" uid="uid://dltdcr4bu2ds5" path="res://frame_reload_FILL0_wght400_GRAD0_opsz48.png" id="5_akjx6"]
+[ext_resource type="Texture2D" uid="uid://detukn0layjxg" path="res://Images/pause.png" id="2_hrlrh"]
+[ext_resource type="Texture2D" uid="uid://dltdcr4bu2ds5" path="res://Images/reload.png" id="5_akjx6"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -57,13 +55,13 @@ text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_v4ov7")
+text = "RESUME"
 
-[node name="QuitButton" type="TextureButton" parent="Control/CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_0pnuk")
+text = "QUIT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
