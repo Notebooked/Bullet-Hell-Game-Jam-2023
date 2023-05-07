@@ -22,7 +22,7 @@ camera_preset = 2
 set_camera_preset_instantly = true
 
 [node name="Spawner" parent="Phases/Phase1" index="0" instance=ExtResource("3_p58to")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92764, -2.85871, 5.67701)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92764, -3.49387, 5.67701)
 
 [node name="Platform" parent="Phases/Phase1" index="1" instance=ExtResource("3_04kkp")]
 transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 0, -5.13823, 5.6881)
