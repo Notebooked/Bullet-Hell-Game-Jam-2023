@@ -21,6 +21,8 @@ flip_faces = true
 
 [sub_resource type="Environment" id="Environment_62jxo"]
 glow_enabled = true
+glow_intensity = 0.13
+glow_strength = 1.14
 glow_blend_mode = 0
 glow_hdr_threshold = 2.0
 

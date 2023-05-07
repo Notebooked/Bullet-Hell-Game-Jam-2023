@@ -54,6 +54,9 @@ func _process(delta):
 		position.y += level_finished_speed
 		player_lerp_amount = lerpf(player_lerp_amount, 1, 0.01)
 		player.position = lerp(player.position, position, player_lerp_amount)
+		player.rotation = lerp(player.rotation, get_node("../../../Camera").rotation, player_lerp_amount * 3)
+		player.rotation.z = 0
+		player.rotation.x = 0
 
 		move_icospheres()
 		

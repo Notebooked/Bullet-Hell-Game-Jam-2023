@@ -16,4 +16,4 @@ transform = Transform3D(1.16556, 0, 0, 0, 1.16556, 0, 0, 0, 1.16556, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_emaet")
 
 [node name="PlayerMesh" parent="." instance=ExtResource("2_n43by")]
-transform = Transform3D(0.200045, 0, 0, 0, 0.200045, 0, 0, 0, 0.200045, 0, -1.32477, 0)
+transform = Transform3D(0.200045, 0, 0, 0, 0.200045, 0, 0, 0, 0.200045, 0, -1.24428, 0)
