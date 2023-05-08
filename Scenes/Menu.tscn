@@ -38,10 +38,14 @@ grow_horizontal = 2
 layout_mode = 2
 text = "PLAY"
 
-[node name="SelectButton" type="Button" parent="TextureRect/HBoxContainer"]
+[node name="LevelSelectButton" type="Button" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 text = "SELECT LEVEL"
 
 [node name="QuitButton" type="Button" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 text = "QUIT"
+
+[connection signal="pressed" from="TextureRect/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

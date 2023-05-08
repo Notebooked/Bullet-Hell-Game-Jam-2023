@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5fdaf4jhjn0v"]
+[gd_scene load_steps=15 format=3 uid="uid://5fdaf4jhjn0v"]
 
 [ext_resource type="PackedScene" uid="uid://danuk7irbmoq6" path="res://Scenes/Player.tscn" id="1_7ir5e"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_7u7qs"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dcp6oxpefdh1t" path="res://Scenes/Heart.tscn" id="6_j58cb"]
 [ext_resource type="PackedScene" uid="uid://cajsefmjj8ld4" path="res://Scenes/Pause.tscn" id="9_jvy6o"]
 [ext_resource type="PackedScene" uid="uid://wwn4iyj7lqw8" path="res://Scenes/Death.tscn" id="10_i8qyu"]
-[ext_resource type="AudioStream" uid="uid://b7gpwdh8iksay" path="res://BHGJ23.mp3" id="11_p81hn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjgcc"]
 
@@ -118,7 +117,3 @@ layout_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_62jxo")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_p81hn")
-autoplay = true
