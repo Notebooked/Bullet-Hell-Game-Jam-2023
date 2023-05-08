@@ -46,6 +46,9 @@ func shoot():
 # Called when the node enters the scene tree for the first time.
 func phase_deactivated():
 	able_to_shoot = false
+	for child in get_children():
+		if "Bullet" in child.name:
+			child.get_node("")
 
 func phase_activated():
 	able_to_shoot = true
