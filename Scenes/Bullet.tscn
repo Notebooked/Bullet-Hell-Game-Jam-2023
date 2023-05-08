@@ -1,36 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://cscu3ah6uha0p"]
+[gd_scene load_steps=8 format=3 uid="uid://cscu3ah6uha0p"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_nbec5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tfoof"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8uqu"]
+albedo_color = Color(2, 0, 2, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6n1id"]
+material = SubResource("StandardMaterial3D_g8uqu")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="Curve" id="Curve_pggvq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.19732, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="SphereMesh" id="SphereMesh_4py6w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2ihv"]
 albedo_color = Color(2, 0, 2, 1)
-
-[sub_resource type="Curve" id="Curve_0a1rm"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.75974, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_e28bs"]
-curve = SubResource("Curve_0a1rm")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_715wc"]
-spread = 180.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 10.0
-scale_curve = SubResource("CurveTexture_e28bs")
-color = Color(2, 0, 2, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5gob"]
-albedo_color = Color(2, 0, 2, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_b0ra1"]
-material = SubResource("StandardMaterial3D_v5gob")
-radius = 0.1
-height = 0.2
 
 [node name="Bullet" type="Area3D"]
 script = ExtResource("1_nbec5")
@@ -39,18 +28,22 @@ script = ExtResource("1_nbec5")
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 shape = SubResource("SphereShape3D_tfoof")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-mesh = SubResource("SphereMesh_4py6w")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_e2ihv")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0067842, -1.19209e-07, -0.00193214)
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 emitting = false
 amount = 10
 lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_715wc")
-draw_pass_1 = SubResource("SphereMesh_b0ra1")
+fixed_fps = 60
+mesh = SubResource("SphereMesh_6n1id")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_curve = SubResource("Curve_pggvq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = SubResource("SphereMesh_4py6w")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e2ihv")

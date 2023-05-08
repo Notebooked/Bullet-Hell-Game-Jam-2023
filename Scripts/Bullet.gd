@@ -13,7 +13,7 @@ func _physics_process(delta):
 			$CollisionShape3D.disabled = true
 			$MeshInstance3D.visible = false
 			
-			$GPUParticles3D.emitting = true
+			$CPUParticles3D.emitting = true
 			
 			time = delta
 			
