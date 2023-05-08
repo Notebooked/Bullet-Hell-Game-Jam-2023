@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b44rh6mr2vyk6"]
+
+[ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_e51yd"]
+[ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_wl2d6"]
+[ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="3_xeuwm"]
+[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="4_qdyag"]
+[ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_e20ys"]
+
+[node name="Level10" instance=ExtResource("1_e51yd")]
+
+[node name="MeshInstance3D" parent="Room" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DirectionalLight3D" parent="." index="3"]
+shadow_bias = 9.782
+
+[node name="Phase1" type="Node3D" parent="Phases" index="0"]
+script = ExtResource("2_wl2d6")
+camera_preset = 1
+set_camera_preset_instantly = true
+
+[node name="Platform" parent="Phases/Phase1" index="0" instance=ExtResource("3_xeuwm")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -3.10245, -4.9838, 0.624452)
+
+[node name="Platform2" parent="Phases/Phase1" index="1" instance=ExtResource("3_xeuwm")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, 2.94107, -4.9838, 0.624452)
+
+[node name="Platform3" parent="Phases/Phase1" index="2" instance=ExtResource("3_xeuwm")]
+transform = Transform3D(3.8346, 0, 0, 0, 0.650602, 0, 0, 0, 3.61088, -0.0919895, -1.90124, 0.624134)
+
+[node name="Spawner" parent="Phases/Phase1" index="3" instance=ExtResource("4_qdyag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0682, -6.42738, 0.668619)
+
+[node name="Spawner2" parent="Phases/Phase1" index="4" instance=ExtResource("4_qdyag")]
+transform = Transform3D(-0.999988, 0, 0.00495661, 0, 1, 0, -0.00495661, 0, -0.999988, 7.03646, -3.35061, 0.668619)
+cooldown = 2.0
+
+[node name="Spawner3" parent="Phases/Phase1" index="5" instance=ExtResource("4_qdyag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0682, 0.0195789, 0.668619)
+
+[node name="PhaseGoal" parent="Phases/Phase1" index="6" instance=ExtResource("5_e20ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.52318, 0.381499)
+
+[node name="Phase2" type="Node3D" parent="Phases" index="1"]
+script = ExtResource("2_wl2d6")
+camera_preset = 3
+
+[node name="Goal" parent="Phases/EndPhase" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.3474, -4.52439, -3.42625)

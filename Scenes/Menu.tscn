@@ -46,6 +46,11 @@ text = "SELECT LEVEL"
 layout_mode = 2
 text = "QUIT"
 
+[node name="AboutButton" type="Button" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+text = "ABOUT US"
+
 [connection signal="pressed" from="TextureRect/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TextureRect/HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="TextureRect/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
