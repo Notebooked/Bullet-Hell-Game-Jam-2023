@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b44rh6mr2vyk6"]
+[gd_scene load_steps=9 format=3 uid="uid://b44rh6mr2vyk6"]
 
 [ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_e51yd"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_wl2d6"]
 [ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="3_xeuwm"]
 [ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="4_qdyag"]
 [ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_e20ys"]
+[ext_resource type="Script" path="res://Scenes/Levels/MeshInstance3D.gd" id="6_uk523"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba6ql"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wfex1"]
 
 [node name="Level10" instance=ExtResource("1_e51yd")]
 
@@ -40,6 +45,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0682, 0.0195789, 0.668619)
 
 [node name="PhaseGoal" parent="Phases/Phase1" index="6" instance=ExtResource("5_e20ys")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.52318, 0.381499)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Phases/Phase1" index="7"]
+transform = Transform3D(12.1398, 0, 0, 0, 2.24211, 0, 0, 0, 2.82962, 0, 0, -7.84202)
+material_overlay = SubResource("StandardMaterial3D_ba6ql")
+mesh = SubResource("SphereMesh_wfex1")
+script = ExtResource("6_uk523")
+
+[node name="Area3D" type="Area3D" parent="Phases/Phase1/MeshInstance3D" index="0"]
 
 [node name="Phase2" type="Node3D" parent="Phases" index="1"]
 script = ExtResource("2_wl2d6")
