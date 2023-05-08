@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5fdaf4jhjn0v"]
+[gd_scene load_steps=16 format=3 uid="uid://5fdaf4jhjn0v"]
 
 [ext_resource type="PackedScene" uid="uid://danuk7irbmoq6" path="res://Scenes/Player.tscn" id="1_7ir5e"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="2_7u7qs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Hearts.gd" id="5_fmph5"]
 [ext_resource type="PackedScene" uid="uid://cdbcpeu0a8dr6" path="res://Scenes/Goal.tscn" id="5_mn0d1"]
 [ext_resource type="PackedScene" uid="uid://dcp6oxpefdh1t" path="res://Scenes/Heart.tscn" id="6_j58cb"]
+[ext_resource type="AudioStream" uid="uid://cco0p60bescyj" path="res://Sounds/damage.wav" id="9_728mp"]
 [ext_resource type="PackedScene" uid="uid://cajsefmjj8ld4" path="res://Scenes/Pause.tscn" id="9_jvy6o"]
 [ext_resource type="PackedScene" uid="uid://wwn4iyj7lqw8" path="res://Scenes/Death.tscn" id="10_i8qyu"]
 
@@ -108,6 +109,10 @@ offset_right = -0.448013
 offset_bottom = 0.295998
 script = ExtResource("5_fmph5")
 heart_scene = ExtResource("6_j58cb")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="Gui/Hearts"]
+stream = ExtResource("9_728mp")
+volume_db = -12.339
 
 [node name="PauseMenu" parent="Gui" instance=ExtResource("9_jvy6o")]
 layout_mode = 1

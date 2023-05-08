@@ -18,6 +18,7 @@ config/icon="res://Images/icon.svg"
 [autoload]
 
 Music="*res://Scenes/Music.tscn"
+SceneTransition="*res://Scenes/SceneTransition.tscn"
 
 [display]
 

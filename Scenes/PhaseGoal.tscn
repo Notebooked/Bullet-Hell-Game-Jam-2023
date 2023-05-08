@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://o6q46v3f4nmv"]
+[gd_scene load_steps=6 format=3 uid="uid://o6q46v3f4nmv"]
 
 [ext_resource type="Script" path="res://Scripts/PhaseGoal.gd" id="1_ffjnc"]
 [ext_resource type="ArrayMesh" uid="uid://c37wd2gobu4xm" path="res://icosphere.obj" id="2_ylx61"]
+[ext_resource type="AudioStream" uid="uid://dernpw837qxol" path="res://Sounds/phasegoal.wav" id="3_d4hv3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0e56q"]
 
@@ -23,3 +24,7 @@ transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_hhy3y")
 mesh = ExtResource("2_ylx61")
 skeleton = NodePath("")
+
+[node name="GoalReached" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d4hv3")
+volume_db = -5.288

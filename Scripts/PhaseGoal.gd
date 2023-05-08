@@ -10,3 +10,5 @@ func _process(delta):
 				get_node("../..").next_phase()
 			
 			collected = true
+			
+			$GoalReached.play()

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cvyps50j4gfef" path="res://Scenes/PlayerMesh.tscn" id="2_n43by"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_emaet"]
-radius = 0.371071
-height = 2.35025
+radius = 0.324457
+height = 2.17806
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -16,4 +16,4 @@ transform = Transform3D(1.16556, 0, 0, 0, 1.16556, 0, 0, 0, 1.16556, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_emaet")
 
 [node name="PlayerMesh" parent="." instance=ExtResource("2_n43by")]
-transform = Transform3D(0.200045, 0, 0, 0, 0.200045, 0, 0, 0, 0.200045, 0, -1.24428, 0)
+transform = Transform3D(0.196024, 0, 0, 0, 0.196024, 0, 0, 0, 0.196024, 0, -1.15816, 0)

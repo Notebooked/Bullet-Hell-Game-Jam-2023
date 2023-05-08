@@ -22,6 +22,7 @@ offset_right = 72.2656
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ai24y")
+stretch_mode = 6
 
 [node name="HBoxContainer" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 1

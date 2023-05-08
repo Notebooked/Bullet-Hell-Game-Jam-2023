@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_0whl5"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_rq01h"]
-[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="3_uknjl"]
+[ext_resource type="PackedScene" uid="uid://d0mh4g4vx5miw" path="res://Scenes/Spawner.tscn" id="3_uknjl"]
 [ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="4_xosdy"]
 [ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_fx2n4"]
 
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26149, -7.06609, 3.61846)
 camera_preset = 1
 
 [node name="Goal" parent="Phases/EndPhase" index="0"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.86836, 2.00534, 3.43236)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.86836, 3.54115, 3.43236)
 
 [node name="Spawner" parent="Phases/EndPhase" index="1" instance=ExtResource("3_uknjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02363, -6.99045, 3.61406)

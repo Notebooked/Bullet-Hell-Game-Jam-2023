@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_0aqqp"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_o5jgu"]
 [ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="3_04kkp"]
-[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="3_p58to"]
+[ext_resource type="PackedScene" uid="uid://d0mh4g4vx5miw" path="res://Scenes/Spawner.tscn" id="3_p58to"]
 [ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_l0let"]
 
 [node name="Level1" instance=ExtResource("1_0aqqp")]

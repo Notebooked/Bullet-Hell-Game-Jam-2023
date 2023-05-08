@@ -7,7 +7,7 @@ const GRAVITY = 45
 
 var camera: Camera3D
 
-var level_finished = false
+var can_move = true
 
 var was_on_floor_last = false
 
@@ -17,8 +17,6 @@ func _ready():
 func lerp_rotation(direction):
 	if direction.length() > 0:
 		var new_rot = atan2(velocity.x,velocity.z)
-		
-		print(new_rot)
 		
 		rotation.y = new_rot
 
@@ -61,13 +59,13 @@ func _physics_process(delta):
 	
 	handle_animations(direction)
 	
-	if !level_finished:
+	if can_move:
 		move_and_slide()
 		lerp_rotation(direction)
 
-func bullet_hit():
-	if !level_finished:
+func hit():
+	if can_move:
 		get_node("../Gui/Hearts").took_damage()
 
 func goal_touched():
-	level_finished = true
+	can_move = false

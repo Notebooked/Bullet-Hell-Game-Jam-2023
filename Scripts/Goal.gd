@@ -62,7 +62,10 @@ func _process(delta):
 		
 		if player.position.y > next_level_height:
 			print(get_tree().current_scene.name)
-			get_tree().change_scene_to_file("res://Scenes/Levels/Level" + str(int(str(get_tree().current_scene.name))+1) + ".tscn")
+			SceneTransition.change_scene("res://Scenes/Levels/Level" + str(int(str(get_tree().current_scene.name))+1) + ".tscn")
+
+		if not $GoalTouched.playing:
+			$GoalTouched.play()
 
 		return
 

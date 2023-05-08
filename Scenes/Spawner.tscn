@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0fckc2gfx4hn"]
+[gd_scene load_steps=6 format=3 uid="uid://d0mh4g4vx5miw"]
 
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="1_ai6r8"]
 [ext_resource type="ArrayMesh" uid="uid://ce2re3cwkss60" path="res://bulletlauncher.obj" id="2_3a4lc"]
+[ext_resource type="AudioStream" uid="uid://vv8ijtfkiyvl" path="res://Sounds/shoot.wav" id="3_kbww4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nwcw"]
 
@@ -17,7 +18,11 @@ script = ExtResource("1_ai6r8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3nwcw")
 
-[node name="Bulletlauncher" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_5e657")
 mesh = ExtResource("2_3a4lc")
+
+[node name="Spawned" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kbww4")
+volume_db = -10.136

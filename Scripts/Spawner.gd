@@ -42,13 +42,16 @@ func shoot():
 	var forward = Vector3(1,0,0)
 	b.position = forward * shoot_offset
 	b.velocity = forward * speed
+	
+	$Spawned.play()
 
 # Called when the node enters the scene tree for the first time.
 func phase_deactivated():
 	able_to_shoot = false
 	for child in get_children():
 		if "Bullet" in child.name:
-			child.get_node("")
+			print(child.name)
+			child.explode()
 
 func phase_activated():
 	able_to_shoot = true

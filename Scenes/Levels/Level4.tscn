@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dptn6jxp42yfg"]
+[gd_scene load_steps=6 format=3 uid="uid://dptn6jxp42yfg"]
 
 [ext_resource type="PackedScene" uid="uid://5fdaf4jhjn0v" path="res://Scenes/BaseLevel.tscn" id="1_ve1ri"]
 [ext_resource type="Script" path="res://Scripts/Phase.gd" id="2_5dn0e"]
-[ext_resource type="PackedScene" uid="uid://c0fckc2gfx4hn" path="res://Scenes/Spawner.tscn" id="3_tqd11"]
+[ext_resource type="PackedScene" uid="uid://d0mh4g4vx5miw" path="res://Scenes/Spawner.tscn" id="3_tqd11"]
+[ext_resource type="PackedScene" uid="uid://dppjg0rlrd2lp" path="res://Scenes/Platform.tscn" id="4_g1wov"]
 [ext_resource type="PackedScene" uid="uid://o6q46v3f4nmv" path="res://Scenes/PhaseGoal.tscn" id="5_sok8s"]
 
 [node name="Level4" instance=ExtResource("1_ve1ri")]
 
 [node name="Player" parent="." index="0"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -4.85397, -6.75, -5.54918)
+
+[node name="Camera" parent="." index="2"]
+current = false
 
 [node name="DirectionalLight3D" parent="." index="3"]
 shadow_bias = 9.782
@@ -39,9 +43,45 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.3887
 [node name="PhaseGoal" parent="Phases/Phase1" index="5" instance=ExtResource("5_sok8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37682, -6.38582, 5.40582)
 
-[node name="EndPhase" parent="Phases" index="1"]
-visible = false
+[node name="Phase2" type="Node3D" parent="Phases" index="1"]
+script = ExtResource("2_5dn0e")
+camera_preset = 3
+
+[node name="Spawner2" parent="Phases/Phase2" index="0" instance=ExtResource("3_tqd11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.024, -6.962, -2.32055)
+start_wait = 0.2
+
+[node name="Spawner3" parent="Phases/Phase2" index="1" instance=ExtResource("3_tqd11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.024, -6.962, 0.679453)
+
+[node name="Spawner5" parent="Phases/Phase2" index="2" instance=ExtResource("3_tqd11")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.61127, -6.962, -6.99111)
+start_wait = 0.2
+
+[node name="Spawner6" parent="Phases/Phase2" index="3" instance=ExtResource("3_tqd11")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.388726, -6.962, -6.99111)
+
+[node name="PhaseGoal" parent="Phases/Phase2" index="4" instance=ExtResource("5_sok8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.62318, -6.38582, -5.59418)
+
+[node name="EndPhase" parent="Phases" index="2"]
 camera_preset = 1
 
 [node name="Goal" parent="Phases/EndPhase" index="0"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.86836, 2.00534, 3.43236)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.40106, 1.2864, -5.59418)
+
+[node name="Spawner6" parent="Phases/EndPhase" index="1" instance=ExtResource("3_tqd11")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.99777, -6.962, -5.54094)
+cooldown = 0.7
+speed = 9
+
+[node name="Spawner7" parent="Phases/EndPhase" index="2" instance=ExtResource("3_tqd11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9867, -1.03013, -5.54094)
+cooldown = 0.7
+speed = 9
+
+[node name="Platform" parent="Phases/EndPhase" index="3" instance=ExtResource("4_g1wov")]
+transform = Transform3D(10.7558, 0, 0, 0, 0.241162, 0, 0, 0, 1.47501, -2.07779, -1.66467, -5.55079)
+
+[node name="Platform2" parent="Phases/EndPhase" index="4" instance=ExtResource("4_g1wov")]
+transform = Transform3D(1.475, 0, 0, 0, 0.241, 0, 0, 0, 1.475, 6.77136, -3.95834, -5.55079)

@@ -33,19 +33,25 @@ func phase_deactivate():
 
 func phase_in_phaseparts():
 	for phasepart in get_children():
+		if phasepart.has_method("phasing_in"):
+			phasepart.phasing_in()
 		for child in phasepart.get_children():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = false
 			if is_instance_of(child, MeshInstance3D):
 				child.transparency = lerpf(child.transparency, 0.0, phase_in_alpha_lerp)
+				child.cast_shadow = true
 
 func phase_out_phaseparts():
 	for phasepart in get_children():
+		if phasepart.has_method("phasing_out"):
+			phasepart.phasing_out()
 		for child in phasepart.get_children():
 			if is_instance_of(child, CollisionShape3D):
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
 				child.transparency = lerpf(child.transparency, 1.0, phase_in_alpha_lerp)
+				child.cast_shadow = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _enter_tree():
@@ -55,6 +61,7 @@ func _enter_tree():
 				child.disabled = true
 			if is_instance_of(child, MeshInstance3D):
 				child.transparency = 1.0
+				child.cast_shadow = false
 
 func phase_process(delta, activated):
 	if activated:

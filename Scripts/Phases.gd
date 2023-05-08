@@ -29,4 +29,7 @@ func next_phase():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
+	for child in get_children():
+		child.visible = true
+	
 	next_phase()

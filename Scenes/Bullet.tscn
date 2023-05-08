@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cscu3ah6uha0p"]
+[gd_scene load_steps=9 format=3 uid="uid://cscu3ah6uha0p"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_nbec5"]
+[ext_resource type="AudioStream" uid="uid://dc2nnyrbmedb4" path="res://Sounds/bulletexplode.wav" id="2_yqmup"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tfoof"]
 
@@ -47,3 +48,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 mesh = SubResource("SphereMesh_4py6w")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_e2ihv")
+
+[node name="Explode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yqmup")
+volume_db = -13.22

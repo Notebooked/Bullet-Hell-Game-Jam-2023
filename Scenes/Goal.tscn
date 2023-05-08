@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdbcpeu0a8dr6"]
+[gd_scene load_steps=7 format=3 uid="uid://cdbcpeu0a8dr6"]
 
 [ext_resource type="Script" path="res://Scripts/Goal.gd" id="1_3hecy"]
 [ext_resource type="ArrayMesh" uid="uid://c37wd2gobu4xm" path="res://icosphere.obj" id="1_lqgi6"]
 [ext_resource type="Script" path="res://Scripts/GoalMesh.gd" id="3_gpjwc"]
+[ext_resource type="AudioStream" uid="uid://16b1rw6mvwcc" path="res://Sounds/goaltouched.wav" id="4_haovu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0e56q"]
 
@@ -27,3 +28,7 @@ colors = [Color(2.00392, 0, 0, 1), Color(2, 0.67451, 0, 1), Color(2.00392, 2.003
 
 [node name="IcosphereParticles" type="Node3D" parent="."]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="GoalTouched" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_haovu")
+volume_db = -2.203

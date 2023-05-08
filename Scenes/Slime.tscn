@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://db4kkjv3cd8wm"]
+
+[ext_resource type="Script" path="res://Scripts/Slime.gd" id="1_jykg1"]
+[ext_resource type="ArrayMesh" uid="uid://c352y52tabdc0" path="res://slime.obj" id="1_vyxu3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7mcb"]
+radius = 0.388452
+height = 5.1588
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lowfg"]
+shading_mode = 0
+albedo_color = Color(0.0235294, 0.027451, 0.0509804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvsep"]
+shading_mode = 0
+albedo_color = Color(0.0235294, 0.027451, 0.0509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ook0k"]
+material = SubResource("StandardMaterial3D_bvsep")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Slime" type="Area3D"]
+script = ExtResource("1_jykg1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.148164, 0)
+shape = SubResource("CapsuleShape3D_n7mcb")
+
+[node name="Slime" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lowfg")
+mesh = ExtResource("1_vyxu3")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368379, 0)
+amount = 16
+mesh = SubResource("BoxMesh_ook0k")
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.946, 3.2)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.3
