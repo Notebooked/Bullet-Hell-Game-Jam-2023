@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1k14t8slux7k"]
 
 [ext_resource type="Script" path="res://Scripts/Selection.gd" id="1_qp221"]
-[ext_resource type="Texture2D" uid="uid://c4n4perb51qxs" path="res://Images/perspective.png" id="1_ycm8a"]
+[ext_resource type="Texture2D" uid="uid://c5fay64gcva1o" path="res://Images/perspective2.png" id="2_o0qpf"]
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
@@ -25,4 +25,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ycm8a")
+texture = ExtResource("2_o0qpf")

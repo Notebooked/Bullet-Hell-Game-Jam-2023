@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bikvnoxaywy24"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_l75d5"]
-[ext_resource type="Texture2D" uid="uid://c4n4perb51qxs" path="res://Images/perspective.png" id="2_12qrt"]
+[ext_resource type="Texture2D" uid="uid://c5fay64gcva1o" path="res://Images/perspective2.png" id="2_ai24y"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,13 +17,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -73.0
+offset_right = 72.2656
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_12qrt")
-expand_mode = 3
-stretch_mode = 6
+texture = ExtResource("2_ai24y")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+[node name="HBoxContainer" type="VBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
